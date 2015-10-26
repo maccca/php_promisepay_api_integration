@@ -14,3 +14,15 @@
 Route::get('/', function () {
     return view('welcome');
 });
+
+Route::get('/users', function () {
+    return "You hit /users";
+});
+
+Route::get('/users/new', function () {
+    return "You hit /users/new";
+});
+
+Route::get('users/{id}', function ($id) {
+    return 'User '.$id;
+});
