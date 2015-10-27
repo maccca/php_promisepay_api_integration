@@ -23,6 +23,10 @@ Route::get('/users/new', function () {
  return view('users.new');
 });
 
+Route::post('/users/new', function () {
+ return "proud of you";
+});
+
 Route::get('users/{id}', function ($id) {
     return view('users.show', ['id' => $id]);
 });

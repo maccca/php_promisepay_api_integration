@@ -54,4 +54,6 @@ You hit users/new!
         {!! Form::text('country', null, ['class' => 'form-control']) !!}
     </div>
 
+    <? echo Form::submit('Sign up!'); ?>
+
 {!! Form::close() !!}
