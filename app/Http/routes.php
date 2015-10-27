@@ -20,9 +20,14 @@ Route::get('/users', function () {
 });
 
 Route::get('/users/new', function () {
-    return "You hit /users/new";
+ return view('users.new');
 });
 
 Route::get('users/{id}', function ($id) {
-    return 'User '.$id;
+    return view('users.show', ['id' => $id]);
 });
+
+
+// Route::get('users/{id}', function ($id) {
+//     return 'User '.$id;
+// });
