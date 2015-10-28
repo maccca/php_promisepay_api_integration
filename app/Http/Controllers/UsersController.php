@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use App\User;
 use App\Http\Requests;
 use App\Http\Controllers\Controller;
 
@@ -15,7 +16,7 @@ class UsersController extends Controller {
    */
   public function index()
   {
-    //
+    $users = User::all();
   }
 
   /**
@@ -25,15 +26,35 @@ class UsersController extends Controller {
    */
   public function create(Request $request)
   {
-    $name = $request->input('first_name');
-    return $name;
+    $first_name = $request->input('first_name');
+    $last_name = $request->input('last_name');
+    $email = $request->input('email');
+    $password = $request->input('password');
+    $address_line1 = $request->input('address_line1');
+    $state = $request->input('state');
+    $city = $request->input('city');
+    $zip = $request->input('zip');
+    $country = $request->input('country');
+    $dob = $request->input('dob');
+
+    $user = new User;
+    $user->first_name = $first_name;
+    $user->last_name = $last_name;
+    $user->email = $email;
+    $user->password = $password;
+    $user->address_line1 = $address_line1;
+    $user->state = $state;
+    $user->city = $city;
+    $user->zip = $zip;
+    $user->country = $country;
+    $user->dob = $dob;
+    $user->save();
+    $id = $user.id;
+
+
+    return redirect('users/{id}', ['id' => $id]);
   }
 
-  /**
-   * Store a newly created resource in storage.
-   *
-   * @return Response
-   */
   public function store()
   {
     //
