@@ -6,6 +6,7 @@ use Illuminate\Http\Request;
 use App\User;
 use App\Http\Requests;
 use App\Http\Controllers\Controller;
+use Vendor\Promisepay\Promisepayphp\Lib\UserRepository;
 
 class UsersController extends Controller {
 
@@ -37,6 +38,7 @@ class UsersController extends Controller {
     $country = $request->input('country');
     $dob = $request->input('dob');
 
+    $repo = new UserRepository();
     $user = new User;
     $user->first_name = $first_name;
     $user->last_name = $last_name;
@@ -48,11 +50,11 @@ class UsersController extends Controller {
     $user->zip = $zip;
     $user->country = $country;
     $user->dob = $dob;
+    $repo->createUser($user);
     $user->save();
-    $id = $user.id;
 
 
-    return redirect('users/{id}', ['id' => $id]);
+    return redirect('/');
   }
 
   public function store()
