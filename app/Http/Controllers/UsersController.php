@@ -1,6 +1,12 @@
 <?php
 
-class UsersController extends BaseController {
+namespace App\Http\Controllers;
+
+use Illuminate\Http\Request;
+use App\Http\Requests;
+use App\Http\Controllers\Controller;
+
+class UsersController extends Controller {
 
   /**
    * Display a listing of the resource.
@@ -17,9 +23,10 @@ class UsersController extends BaseController {
    *
    * @return Response
    */
-  public function create()
+  public function create(Request $request)
   {
-    //
+    $name = $request->input('first_name');
+    return $name;
   }
 
   /**
