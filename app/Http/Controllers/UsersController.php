@@ -38,7 +38,7 @@ class UsersController extends Controller {
     $country = $request->input('country');
     $dob = $request->input('dob');
 
-    $repo = new UserRepository();
+    $repo = new PromisePay::UserRepository();
     $user = new User;
     $user->first_name = $first_name;
     $user->last_name = $last_name;
