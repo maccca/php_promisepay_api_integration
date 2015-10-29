@@ -3,3 +3,10 @@
 Homestead.yaml
 Homestead.json
 .env
+.idea/.name
+.idea/blade.xml
+.idea/misc.xml
+.idea/modules.xml
+.idea/php_promisepay_api_integration.iml
+.idea/vcs.xml
+.idea/workspace.xml
