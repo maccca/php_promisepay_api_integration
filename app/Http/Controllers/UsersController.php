@@ -6,7 +6,7 @@ use Illuminate\Http\Request;
 use App\User;
 use App\Http\Requests;
 use App\Http\Controllers\Controller;
-use Vendor\Promisepay\Promisepayphp\Lib\UserRepository;
+require '../../../vendor/promisepay/promisepay-php/init.php';
 
 class UsersController extends Controller {
 
