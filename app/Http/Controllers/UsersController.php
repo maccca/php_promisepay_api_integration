@@ -6,7 +6,7 @@ use Illuminate\Http\Request;
 use App\User;
 use App\Http\Requests;
 use App\Http\Controllers\Controller;
-require '../../../vendor/promisepay/promisepay-php/init.php';
+require '../vendor/promisepay/promisepay-php/init.php';
 
 class UsersController extends Controller {
 
@@ -38,7 +38,7 @@ class UsersController extends Controller {
     $country = $request->input('country');
     $dob = $request->input('dob');
 
-    $repo = new UserRepository();
+    $repo = new PromisePay::UserRepository();
     $user = new User;
     $user->first_name = $first_name;
     $user->last_name = $last_name;
